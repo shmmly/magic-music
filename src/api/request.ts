@@ -7,7 +7,7 @@
 
 import {ajax} from 'rxjs/ajax'
 import {map, catchError} from 'rxjs/operators'
-import {of, Observer} from 'rxjs'
+import {of} from 'rxjs'
 import {BASE_URL} from './consts'
 import {Banner} from './types'
 
