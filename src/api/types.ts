@@ -7,6 +7,14 @@
 
 type Maybe<T> = T | null
 
+export interface BaseResponse {
+  code: Maybe<number>
+}
+
+export interface BannerResponse extends BaseResponse {
+  banners: Maybe<Banner[]>
+}
+
 export interface Banner {
   imageUrl: Maybe<string>
   targetId: Maybe<number>
@@ -33,4 +41,22 @@ export interface Banner {
   video: Maybe<any>
   song: Maybe<any>
   scm: Maybe<string>
+}
+
+export interface PersonalizedResponse extends BaseResponse {
+  category: Maybe<number>
+  hasTaste: Maybe<boolean>
+  result: Maybe<Personalized[]>
+}
+
+export interface Personalized {
+  alg: Maybe<string>
+  canDislike: Maybe<boolean>
+  copywriter: Maybe<string>
+  highQuality: Maybe<boolean>
+  name: Maybe<string>
+  picUrl: Maybe<string>
+  playCount: Maybe<number>
+  trackCount: Maybe<number>
+  type: Maybe<number>
 }

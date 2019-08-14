@@ -7,7 +7,7 @@ const Recommend: FC<RecommendProp> = () => {
   return (
     <ScrollView style={styles.container}>
       <ReHeader />
-      <Text>推荐歌单</Text>
+      <Text style={styles.text}>推荐歌单</Text>
     </ScrollView>
   )
 }
@@ -15,6 +15,12 @@ const Recommend: FC<RecommendProp> = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+  },
+  text: {
+    fontWeight: 'bold',
+    fontSize: 16,
+    paddingVertical: 20,
+    paddingHorizontal:10
   },
 })
 

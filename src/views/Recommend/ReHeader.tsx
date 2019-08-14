@@ -18,7 +18,7 @@ const ReHeader: FC<ReHeaderProp> = () => {
   return (
     <View style={styles.container}>
       {banners && banners.length > 0 ? (
-        <Swiper style={styles.wrapper} dotStyle={{marginTop:100}}>
+        <Swiper style={styles.wrapper} >
           {banners.map(
             (banner, index) =>
               banner.imageUrl && (
@@ -49,7 +49,8 @@ const styles = StyleSheet.create({
   },
   image: {
     height: 150,
-    width: deviceInfo.width - 10,
+    width: deviceInfo.width,
+    paddingHorizontal: 10,
     borderRadius: 12,
     resizeMode: 'contain',
     zIndex: 9999,
