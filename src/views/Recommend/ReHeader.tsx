@@ -11,14 +11,14 @@ const ReHeader: FC<ReHeaderProp> = () => {
 
   useEffect(() => {
     getBanner().subscribe(res => {
-      setBanners(res.banners)
+      res && res.banners && setBanners(res.banners)
     })
   }, [])
 
   return (
     <View style={styles.container}>
       {banners && banners.length > 0 ? (
-        <Swiper style={styles.wrapper} >
+        <Swiper style={styles.wrapper}>
           {banners.map(
             (banner, index) =>
               banner.imageUrl && (

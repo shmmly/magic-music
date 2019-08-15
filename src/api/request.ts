@@ -7,8 +7,9 @@
 
 import {ajax} from 'rxjs/ajax'
 import {map, catchError} from 'rxjs/operators'
-import {of} from 'rxjs'
+import {of, Observable} from 'rxjs'
 import {BASE_URL} from './consts'
+import {BannerResponse, PersonalizedResponse} from './types'
 
 function request(url: string, headers?: Object) {
   return ajax.get(BASE_URL + url, headers).pipe(
@@ -20,6 +21,7 @@ function request(url: string, headers?: Object) {
 /**
  * banner数据获取
  */
-export const getBanner = () => request('/banner')
+export const getBanner = (): Observable<BannerResponse> => request('/banner')
 
-export const getPersonalized = () => request('/personalized')
+export const getPersonalized = (): Observable<PersonalizedResponse> =>
+  request('/personalized')
